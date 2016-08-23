@@ -1,0 +1,33 @@
+body {
+	background-color: #333;
+}
+
+
+.calc-header {
+    border-bottom: #DCDCDC;
+}
+
+.calc-input {
+	height: 80px;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: right;
+	border: none;
+}
+
+.calc-body {
+	background-color: #DCDCDC;
+}
+
+.calc-cell {
+	font-size: 16px;
+	padding: 12px;
+	text-align: center;
+}
+.calc-cell:hover {
+	background-color: #838b8b
+}
+
+.calc-number {
+	font-weight: bold;
+}

@@ -7,45 +7,51 @@
 		<!-- Boostrap CSS -->
 		<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">		
 		<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" href="assets/css/style.css">
 	</head>
 	<body data-ng-app="angularjs-calculator">
 
 		<div class="container-fluid" data-ng-controller="CalculatorController as vm">
 			<!--Calculator-->
 			<div id="calculator" class="row">
-				<div class="col-md-offset-4 col-md-4">
-					<div class="row">
-						<input type="text" name="inputCalc" value="">
+				<div class="col-sm-offset-4 col-sm-4 col-lg-offset-5 col-lg-2 col-xs-12">
+					<div class="row calc-header">
+						<input data-type="number" name="inputCalc" value="" class="calc-input col-xs-12"
+							data-ng-model="vm.valueCalc" data-ng-keypress="vm.InputValue($event)">					
 					</div>
-					<div class="row">
-						<div class="col-md-3">CE</div>
-						<div class="col-md-3">C</div>
-						<div class="col-md-3">BACK</div>
-						<div class="col-md-3">/</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3">7</div>
-						<div class="col-md-3">8</div>
-						<div class="col-md-3">9</div>
-						<div class="col-md-3">X</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3">4</div>
-						<div class="col-md-3">5</div>
-						<div class="col-md-3">6</div>
-						<div class="col-md-3">-</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3">1</div>
-						<div class="col-md-3">2</div>
-						<div class="col-md-3">3</div>
-						<div class="col-md-3">+</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3"></div>
-						<div class="col-md-3">0</div>
-						<div class="col-md-3">,</div>
-						<div class="col-md-3">=</div>
+					<!-- body of calculator -->
+					<div class="calc-body row">
+						<div class="row">
+							<div class="col-xs-3 calc-cell">CE</div>
+							<div class="col-xs-3 calc-cell">C</div>
+							<div class="col-xs-3 calc-cell">BACK</div>
+							<div class="col-xs-3 calc-cell">/</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3 calc-cell calc-number">7</div>
+							<div class="col-xs-3 calc-cell calc-number">8</div>
+							<div class="col-xs-3 calc-cell calc-number">9</div>
+							<div class="col-xs-3 calc-cell">X</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3 calc-cell calc-number">4</div>
+							<div class="col-xs-3 calc-cell calc-number">5</div>
+							<div class="col-xs-3 calc-cell calc-number">6</div>
+							<div class="col-xs-3 calc-cell">-</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3 calc-cell calc-number">1</div>
+							<div class="col-xs-3 calc-cell calc-number">2</div>
+							<div class="col-xs-3 calc-cell calc-number">3</div>
+							<div class="col-xs-3 calc-cell">+</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3 calc-cell calc-number"></div>
+							<div class="col-xs-3 calc-cell calc-number">0</div>
+							<div class="col-xs-3 calc-cell calc-number">,</div>
+							<div class="col-xs-3 calc-cell">=</div>
+						</div>
 					</div>
 				</div>
 			</div>

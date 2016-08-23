@@ -10,6 +10,7 @@
 
 	function CalculatorController() {
 		
+		this.valueCalc = 0;
 	}
 
 })(angular, $);
