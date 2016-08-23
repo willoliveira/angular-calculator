@@ -15,44 +15,53 @@
 		<div class="container-fluid" data-ng-controller="CalculatorController as vm">
 			<!--Calculator-->
 			<div id="calculator" class="row">
-				<div class="col-sm-offset-4 col-sm-4 col-lg-offset-5 col-lg-2 col-xs-12">
-					<div class="row calc-header">
-						<input data-type="number" name="inputCalc" value="" class="calc-input col-xs-12"
-							data-ng-model="vm.valueCalc" data-ng-keypress="vm.InputValue($event)">					
-					</div>
-					<!-- body of calculator -->
-					<div class="calc-body row">
-						<div class="row">
-							<div class="col-xs-3 calc-cell">CE</div>
-							<div class="col-xs-3 calc-cell">C</div>
-							<div class="col-xs-3 calc-cell">BACK</div>
-							<div class="col-xs-3 calc-cell">/</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-3 calc-cell calc-number">7</div>
-							<div class="col-xs-3 calc-cell calc-number">8</div>
-							<div class="col-xs-3 calc-cell calc-number">9</div>
-							<div class="col-xs-3 calc-cell">X</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-3 calc-cell calc-number">4</div>
-							<div class="col-xs-3 calc-cell calc-number">5</div>
-							<div class="col-xs-3 calc-cell calc-number">6</div>
-							<div class="col-xs-3 calc-cell">-</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-3 calc-cell calc-number">1</div>
-							<div class="col-xs-3 calc-cell calc-number">2</div>
-							<div class="col-xs-3 calc-cell calc-number">3</div>
-							<div class="col-xs-3 calc-cell">+</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-3 calc-cell calc-number"></div>
-							<div class="col-xs-3 calc-cell calc-number">0</div>
-							<div class="col-xs-3 calc-cell calc-number">,</div>
-							<div class="col-xs-3 calc-cell">=</div>
-						</div>
-					</div>
+				<div class="col-sm-offset-4 col-sm-4 col-xs-12">
+
+					<table class="table-responsive">
+						<thead class="calc-header">
+							<tr>
+								<th colspan="4">
+									<small class="calc-last-history">&nbsp;</small>
+									<input type="number" name="inputCalc" value="" class="calc-input col-xs-12"
+										data-ng-model="vm.valueCalc" data-ng-keypress="vm.InputValue($event)">
+								</th>					
+							</tr>					
+						</thead>
+						<!-- body of calculator -->
+						<tbody class="calc-body row">
+							<tr>
+								<td class="calc-cell">CE</div>
+								<td class="calc-cell" ng-click="vm.Clear()">C</div>
+								<td class="calc-cell">B</div>
+								<td class="calc-cell" ng-click="vm.SetOperation('Divide')">/</div>
+							</tr>
+							<tr>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(7)">7</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(8)">8</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(9)">9</div>
+								<td class="calc-cell" ng-click="vm.SetOperation('Multiply')">X</div>
+							</tr>
+							<tr>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(4)">4</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(5)">5</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(6)">6</div>
+								<td class="calc-cell" ng-click="vm.SetOperation('Subtract')">-</div>
+							</tr>
+							<tr>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(1)">1</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(2)">2</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(3)">3</div>
+								<td class="calc-cell" ng-click="vm.SetOperation('Sum')">+</div>
+							</tr>
+							<tr>
+								<td class="calc-cell calc-number"></div>
+								<td class="calc-cell calc-number">0</div>
+								<td class="calc-cell calc-number">,</div>
+								<td class="calc-cell" ng-click="vm.Calcule()">=</div>
+							</tr>
+						</tbody>
+
+					</table>
 				</div>
 			</div>
 

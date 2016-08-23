@@ -5,8 +5,12 @@ body {
 
 .calc-header {
     border-bottom: #DCDCDC;
+	background-color: #FFF;
 }
 
+.calc-last-history {
+	float: right;
+}
 .calc-input {
 	height: 80px;
     font-weight: bold;
