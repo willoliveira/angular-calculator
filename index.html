@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Boostrap CSS -->
+		<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.min.css">		
+		<link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap-theme.min.css">
+	</head>
+	<body data-ng-app="angularjs-calculator">
+
+		<div class="container-fluid" data-ng-controller="CalculatorController as vm">
+			<!--Calculator-->
+			<div id="calculator" class="row">
+				<div class="col-md-offset-4 col-md-4">
+					<div class="row">
+						<input type="text" name="inputCalc" value="">
+					</div>
+					<div class="row">
+						<div class="col-md-3">CE</div>
+						<div class="col-md-3">C</div>
+						<div class="col-md-3">BACK</div>
+						<div class="col-md-3">/</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">7</div>
+						<div class="col-md-3">8</div>
+						<div class="col-md-3">9</div>
+						<div class="col-md-3">X</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">4</div>
+						<div class="col-md-3">5</div>
+						<div class="col-md-3">6</div>
+						<div class="col-md-3">-</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">1</div>
+						<div class="col-md-3">2</div>
+						<div class="col-md-3">3</div>
+						<div class="col-md-3">+</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3"></div>
+						<div class="col-md-3">0</div>
+						<div class="col-md-3">,</div>
+						<div class="col-md-3">=</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- jQuery -->
+		<script src="assets/libs/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- AngularJS -->
+		<script src="assets/libs/angular/angular.min.js"></script>
+
+		<!-- app -->
+		<script src="app/controller.module.js"></script>
+		<script src="app/app.module.js"></script>
+		<!-- components -->
+		<script src="app/components/calculator/calculator.controller.js"></script>
+	</body>
+</html>

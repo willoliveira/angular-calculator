@@ -1,0 +1,27 @@
+{
+  "name": "angular-calculator",
+  "homepage": "https://github.com/willoliveira/angular-calculator",
+  "authors": [
+    "Willian Gomes de Oliveira <willian.goliveira@outlook.com>"
+  ],
+  "description": "Calculator that calculates basic operations developed in AngularJS",
+  "main": "",
+  "keywords": [
+    "calculator",
+    "js",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
