@@ -64,8 +64,8 @@
 		/**
 		 * Clear all 
 		 */
-		this.ClearAll = function () {
-			this.history = "";
+		this.ClearAll = function () {			
+			valueCache = undefined;
 			this.Clear();
 		}
 		/**
@@ -73,7 +73,6 @@
 		 */
 		this.Clear = function () {
 			this.valueCalc = 0;
-			valueCache = undefined;
 		}
 		/**
 		 * SetOperation
