@@ -15,49 +15,72 @@
 		<div class="container-fluid" data-ng-controller="CalculatorController as vm">
 			<!--Calculator-->
 			<div id="calculator" class="row">
-				<div class="col-sm-offset-4 col-sm-4 col-xs-12">
+				<div class="col-lg-offset-5 col-lg-2 col-sm-offset-4 col-sm-4 col-xs-12">
 
 					<table class="table-responsive">
 						<thead class="calc-header">
 							<tr>
 								<th colspan="4">
-									<small class="calc-last-history">&nbsp;</small>
-									<input type="number" name="inputCalc" value="" class="calc-input col-xs-12"
-										data-ng-model="vm.valueCalc" data-ng-keypress="vm.InputValue($event)">
+									<label class="calc-input col-xs-12 calc-label-error"
+										data-ng-if="vm.valueCalc.error"  data-ng-cloak>
+										{{vm.valueCalc.msg}}
+									</label>
+
+									<input ng-if="!vm.valueCalc.error" type="number" name="inputCalc" value="" class="calc-input col-xs-12"
+										data-ng-model="vm.valueCalc" 
+										data-ng-keyup="vm.InputValue()">
 								</th>					
 							</tr>					
 						</thead>
 						<!-- body of calculator -->
 						<tbody class="calc-body row">
-							<tr>
-								<td class="calc-cell">CE</div>
-								<td class="calc-cell" ng-click="vm.Clear()">C</div>
-								<td class="calc-cell">B</div>
-								<td class="calc-cell" ng-click="vm.SetOperation('Divide')">/</div>
+							<tr class="calc-head-commands">
+								<td class="calc-cell btn-disabled">%</td>
+								<td class="calc-cell btn-disabled">
+									<img class="calc-command" alt="Sqrt(x)" src="assets/img/sqrt.svg">
+								</td>
+								<td class="calc-cell btn-disabled">
+									<img class="calc-command" alt="Exponentialet" src="assets/img/exp.svg">
+								</td>
+								<td class="calc-cell btn-disabled">
+									<img class="calc-command" alt="Half" src="assets/img/half.svg">
+								</td>
 							</tr>
 							<tr>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(7)">7</div>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(8)">8</div>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(9)">9</div>
-								<td class="calc-cell" ng-click="vm.SetOperation('Multiply')">X</div>
+								<td class="calc-cell">CE</td>
+								<td class="calc-cell" ng-click="vm.Clear()">C</td>
+								<td class="calc-cell btn-disabled">
+									<img class="calc-command" alt="" src="assets/img/backspace.svg">
+								</td>
+								<td class="calc-cell" ng-click="vm.SetOperation('Divide')">
+									<img class="calc-command" alt="Division" src="assets/img/divide.svg">
+								</td>
 							</tr>
 							<tr>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(4)">4</div>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(5)">5</div>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(6)">6</div>
-								<td class="calc-cell" ng-click="vm.SetOperation('Subtract')">-</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(7)">7</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(8)">8</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(9)">9</td>
+								<td class="calc-cell" ng-click="vm.SetOperation('Multiply')">X</td>
 							</tr>
 							<tr>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(1)">1</div>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(2)">2</div>
-								<td class="calc-cell calc-number" ng-click="vm.SetNumber(3)">3</div>
-								<td class="calc-cell" ng-click="vm.SetOperation('Sum')">+</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(4)">4</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(5)">5</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(6)">6</td>
+								<td class="calc-cell" ng-click="vm.SetOperation('Subtract')">-</td>
 							</tr>
 							<tr>
-								<td class="calc-cell calc-number"></div>
-								<td class="calc-cell calc-number">0</div>
-								<td class="calc-cell calc-number">,</div>
-								<td class="calc-cell" ng-click="vm.Calcule()">=</div>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(1)">1</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(2)">2</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(3)">3</td>
+								<td class="calc-cell" ng-click="vm.SetOperation('Sum')">+</td>
+							</tr>
+							<tr>
+								<td class="calc-cell calc-number btn-disabled">
+									<img class="calc-command" alt="" src="assets/img/moreless.svg">
+								</td>
+								<td class="calc-cell calc-number" ng-click="vm.SetNumber(0)">0</td>
+								<td class="calc-cell calc-number btn-disabled">,</td>
+								<td class="calc-cell" ng-click="vm.Calcule(true)">=</td>
 							</tr>
 						</tbody>
 
@@ -76,8 +99,10 @@
 
 		<!-- app -->
 		<script src="app/controller.module.js"></script>
+		<script src="app/service.module.js"></script>
 		<script src="app/app.module.js"></script>
 		<!-- components -->
+		<script src="app/shared/basicOperations/basicOperations.service.js"></script>
 		<script src="app/components/calculator/calculator.controller.js"></script>
 	</body>
 </html>

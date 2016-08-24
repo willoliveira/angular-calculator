@@ -1,6 +1,6 @@
 
   angular
     .module("angularjs-calculator", [
-      "calc.controller"
-	  //,"calc.services"
+      "calc.controller",
+      "calc.service"
     ]);

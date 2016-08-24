@@ -2,9 +2,19 @@ body {
 	background-color: #333;
 }
 
+#calculator {
+	padding-top: 30px;
+}
+
+
 
 .calc-header {
     border-bottom: #DCDCDC;
+	background-color: #FFF;
+}
+
+.calc-head-commands {
+	border-top: rgba(131, 139, 139, 0.3) 1px solid;
 	background-color: #FFF;
 }
 
@@ -19,6 +29,10 @@ body {
 	border: none;
 }
 
+.calc-input.calc-label-error {
+	font-size: 20px;
+}
+
 .calc-body {
 	background-color: #DCDCDC;
 }
@@ -27,8 +41,18 @@ body {
 	font-size: 16px;
 	padding: 12px;
 	text-align: center;
+	cursor: pointer;
 }
-.calc-cell:hover {
+
+.btn-disabled {
+	cursor: not-allowed;
+}
+
+.calc-cell .calc-command {
+	height: 18px;
+}
+
+.calc-cell:not(.btn-disabled):hover {
 	background-color: #838b8b
 }
 
