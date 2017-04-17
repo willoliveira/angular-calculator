@@ -2,12 +2,8 @@
 
 ## Instructions
 
-Install bower.
-```
-npm install bower -g
-```
+Primeiramenta, tenha no [node]("https://nodejs.org/en/") instalado, depois instale as dependências.
 
-Install dependencies.
 ```
-bower install
+npm install
 ```
